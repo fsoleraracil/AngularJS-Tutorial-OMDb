@@ -10,8 +10,17 @@
 angular.module('omdbApp')
   .controller('AboutCtrl', function () {
     this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
+        {
+            title: 'HTML5',
+            description: 'With HTML you can create your own Web site!'
+        },
+        {
+            title: 'AngularJS',
+            description: ''
+        },
+        {
+            title: 'Karma',
+            description: ''
+        }
     ];
   });
