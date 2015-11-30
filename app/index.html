@@ -35,11 +35,11 @@
             <a class="navbar-brand" href="#/">OMDb</a>
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="MenuCtrl">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
+              <li ng-class="{ active: isActive('/') }"><a href="#/">Home</a></li>
+              <li ng-class="{ active: isActive('/about') }"><a ng-href="#/about">About</a></li>
             </ul>
           </div>
         </div>
@@ -84,8 +84,10 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/constants/Technologies.js"></script>
+        <script src="scripts/controllers/MainCtrl.js"></script>
+        <script src="scripts/controllers/MenuCtrl.js"></script>
+        <script src="scripts/controllers/AboutCtrl.js"></script>
         <!-- endbuild -->
 </body>
 </html>
