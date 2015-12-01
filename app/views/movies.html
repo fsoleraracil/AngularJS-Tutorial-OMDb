@@ -1,0 +1,23 @@
+<div class="input-group">
+  <span class="input-group-btn">
+    <button class="btn btn-default" type="button" ng-click="search()">Go!</button>
+  </span>
+  <input type="text" autofocus ng-model="keywords" class="form-control" placeholder="Search for..." />
+</div>
+<table class="table table-striped" ng-hide="movies.isEmpty()">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Year</td>
+      <td>Genre</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="movie in movies | orderBy: 'Title'">
+      <td>{{ movie.Title }}</td>
+      <td>{{ movie.Year }}</td>
+      <td>{{ movie.Type }}</td>
+    </tr>
+  </tbody>
+</table>
+<br/>

@@ -39,6 +39,7 @@
 
             <ul class="nav navbar-nav">
               <li ng-class="{ active: isActive('/') }"><a href="#/">Home</a></li>
+              <li ng-class="{ active: isActive('/movies') }"><a ng-href="#/movies">Movies</a></li>
               <li ng-class="{ active: isActive('/about') }"><a ng-href="#/about">About</a></li>
             </ul>
           </div>
@@ -87,7 +88,9 @@
         <script src="scripts/constants/Technologies.js"></script>
         <script src="scripts/controllers/MainCtrl.js"></script>
         <script src="scripts/controllers/MenuCtrl.js"></script>
+        <script src="scripts/controllers/MoviesCtrl.js"></script>
         <script src="scripts/controllers/AboutCtrl.js"></script>
+        <script src="scripts/services/MoviesService.js"></script>
         <!-- endbuild -->
 </body>
 </html>
