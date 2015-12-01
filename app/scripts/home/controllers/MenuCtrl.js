@@ -8,8 +8,8 @@
  * Controller of the omdbApp
  */
 angular.module('omdbApp')
-  .controller('MenuCtrl', ['$scope', '$location', function ($scope, $location) {
-    $scope.isActive = function (viewPath) {
+  .controller('MenuCtrl', function ($location) {
+    this.isActive = function (viewPath) {
       return $location.path() === viewPath;
     };
-  }]);
+  });

@@ -8,6 +8,6 @@
  * Controller of the omdbApp
  */
 angular.module('omdbApp')
-  .controller('AboutCtrl', ['$scope', 'Technologies', function ($scope, Technologies) {
-    $scope.awesomeThings = Technologies;
-  }]);
+  .controller('AboutCtrl', function (Technologies) {
+    this.awesomeThings = Technologies;
+  });

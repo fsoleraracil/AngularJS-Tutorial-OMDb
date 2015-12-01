@@ -8,7 +8,7 @@
  * Controller of the omdbApp
  */
 angular.module('omdbApp')
-  .factory('MoviesService', ['$http', function ($http) {
+  .factory('MoviesService', function ($http) {
     var serviceUrl = 'http://www.omdbapi.com/';
 
     return {
@@ -32,4 +32,4 @@ angular.module('omdbApp')
           });
       }
     };
-  }]);
+  });

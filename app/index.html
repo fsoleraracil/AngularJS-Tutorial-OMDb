@@ -35,12 +35,12 @@
             <a class="navbar-brand" href="#/">OMDb</a>
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="MenuCtrl">
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="MenuCtrl as menu">
 
             <ul class="nav navbar-nav">
-              <li ng-class="{ active: isActive('/') }"><a href="#/">Home</a></li>
-              <li ng-class="{ active: isActive('/movies') }"><a ng-href="#/movies">Movies</a></li>
-              <li ng-class="{ active: isActive('/about') }"><a ng-href="#/about">About</a></li>
+              <li ng-class="{ active: menu.isActive('/') }"><a href="#/">Home</a></li>
+              <li ng-class="{ active: menu.isActive('/movies') }"><a ng-href="#/movies">Movies</a></li>
+              <li ng-class="{ active: menu.isActive('/about') }"><a ng-href="#/about">About</a></li>
             </ul>
           </div>
         </div>

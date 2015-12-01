@@ -1,10 +1,10 @@
 <div class="input-group">
   <span class="input-group-btn">
-    <button class="btn btn-default" type="button" ng-click="search()">Go!</button>
+    <button class="btn btn-default" type="button" ng-click="movies.search()">Go!</button>
   </span>
-  <input type="text" autofocus ng-model="keywords" class="form-control" placeholder="Search for..." />
+  <input class="form-control" type="text" placeholder="Search for movies..." autofocus ng-model="movies.keywords"/>
 </div>
-<table class="table table-striped" ng-hide="movies.isEmpty()">
+<table class="table table-striped" ng-hide="movies.isMoviesEmpty()">
   <thead>
     <tr>
       <td>Name</td>
@@ -13,7 +13,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="movie in movies | orderBy: 'Title'">
+    <tr ng-repeat="movie in movies.selectedMovies | orderBy: 'Title'">
       <td>{{ movie.Title }}</td>
       <td>{{ movie.Year }}</td>
       <td>{{ movie.Type }}</td>

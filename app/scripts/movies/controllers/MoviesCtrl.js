@@ -8,14 +8,19 @@
  * Controller of the omdbApp
  */
 angular.module('omdbApp')
-  .controller('MoviesCtrl', ['$scope', 'MoviesService', function ($scope, MoviesService) {
-    $scope.movies = [];
-    $scope.keywords = '';
+  .controller('MoviesCtrl', function (MoviesService) {
+    this.selectedMovies = [];
+    this.keywords = '';
+    var that = this;
   
-    $scope.search = function () {
-      MoviesService.search($scope.keywords)
-        .then(function (movies) {
-          $scope.movies = movies;
-        });
+    this.search = function () {
+      MoviesService.search(that.keywords)
+        .then(angular.bind(this, function (movies) {
+          this.selectedMovies = movies;
+        }));
     };
-  }]);
+
+    this.isMoviesEmpty = function () {
+      return that.selectedMovies.length === 0;
+    };
+  });
