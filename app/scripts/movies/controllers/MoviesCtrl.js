@@ -14,7 +14,9 @@ angular.module('omdbApp')
     var that = this;
   
     this.search = function () {
+      // As we are using the controller as a class we need to bypass the this var.
       MoviesService.search(that.keywords)
+        // We also can bind the this to the callback function.
         .then(angular.bind(this, function (movies) {
           this.selectedMovies = movies;
         }));

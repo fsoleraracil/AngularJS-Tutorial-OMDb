@@ -5,20 +5,19 @@
  * @name omdbApp.service:MoviesService
  * @description
  * # MoviesService
- * Controller of the omdbApp
+ * Service of the omdbApp
  */
 angular.module('omdbApp')
-  .factory('MoviesService', function ($http) {
+  .factory('MoviesService', function ($http, alertService) {
     var serviceUrl = 'http://www.omdbapi.com/';
 
     return {
       search: function (text) {
         return $http.get(serviceUrl + '?s=' + text)
           .then(function (response) {
-            return response.data.Search;
+            return response.data.Search ? response.data.Search : [];
           }, function (error) {
-            console.log('Error downloading movie data: ' + error);
-            return [];
+            alertService.error('Error downloading movie data: ' + error);
           });
       },
 
@@ -27,8 +26,16 @@ angular.module('omdbApp')
           .then(function (response) {
             return response.data;
           }, function (error) {
-            console.log('Error downloading movie details: ' + error);
-            return [];
+            alertService.error('Error downloading movie details: ' + error);
+          });
+      },
+
+      byID: function (text) {
+        return $http.get(serviceUrl + '?i=' + text)
+          .then(function (response) {
+            return response.data;
+          }, function (error) {
+            alertService.error('Error downloading movie details: ' + error);
           });
       }
     };

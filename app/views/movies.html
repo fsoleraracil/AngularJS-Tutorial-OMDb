@@ -14,7 +14,7 @@
   </thead>
   <tbody>
     <tr ng-repeat="movie in movies.selectedMovies | orderBy: 'Title'">
-      <td>{{ movie.Title }}</td>
+      <td><a href="#/movies/{{ movie.imdbID }}">{{ movie.Title }}</a></td>
       <td>{{ movie.Year }}</td>
       <td>{{ movie.Type }}</td>
     </tr>

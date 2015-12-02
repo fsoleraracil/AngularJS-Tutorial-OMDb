@@ -1,0 +1,5 @@
+<h3>{{ movie.selectedMovie.Title }}</h3>
+
+<p>{{ movie.selectedMovie.Plot }}</p>
+
+<movie-preview field="{{ field }}" movie="movie.selectedMovie" ng-repeat="field in movie.displayFields"></movie-preview>
